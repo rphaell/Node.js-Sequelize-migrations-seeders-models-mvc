@@ -23,9 +23,9 @@ PARTE 2 - Configuração Pró:
     
 
 PARTE 3 - Configurar sistema para migrations/seeders:
-    ☐ Adicionar campo 'migrations-path' no .sequelizerc com caminho para database/migrations
-    ☐ Criar pasta database/migrations
-    ☐ Criar a migration create_usuarios com base no der
+    ✔ Adicionar campo 'migrations-path' no .sequelizerc com caminho para database/migrations @done(22-05-09 03:30)
+    ✔ Criar pasta database/migrations @done(22-05-09 03:30)
+    ✔ Criar a migration create_usuarios com base no der @done(22-05-09 03:30)
     ☐ Criar seeder de usuarios
     ☐ Criar a migration create_publicacoes com base no der
     ☐ Criar seeder de publicacoes

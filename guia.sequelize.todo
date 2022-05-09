@@ -158,7 +158,7 @@ deletedAt: Sequelize.DataTypes.DATE,
 
 CRIANDO SEEDERS:
 
-☐ Adicione a pasta de Seeders ao .sequelizerc
+☐ Adicione a seeders-path ao .sequelizerc
 'seeders-path': path.resolve('database','seeders')
 
 ☐ Crie a pasta seeders com o comando no terminal:
