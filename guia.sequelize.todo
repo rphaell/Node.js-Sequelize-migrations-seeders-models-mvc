@@ -156,8 +156,13 @@ createdAt: Sequelize.DataTypes.DATE,
 updatedAt: Sequelize.DataTypes.DATE,
 deletedAt: Sequelize.DataTypes.DATE,
 
+CRIANDO SEEDERS:
 
+☐ Adicione a pasta de Seeders ao .sequelizerc
+'seeders-path': path.resolve('database','seeders')
 
+☐ Crie a pasta seeders com o comando no terminal:
+npx sequelize seed:generate --name seed-usuarios
 
 
 
