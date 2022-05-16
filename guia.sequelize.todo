@@ -4,11 +4,11 @@ ESTABELECENDO CONEXÃO COM O BANCO DE DADOS:
   Obs:Baixe a extensão Todo+
   Utilize alt + D para marcar a caixa
 
-☐ Criar pasta chamada database na raiz do projeto
-☐ Na raiz do projeto criar o arquivo .sequelizerc
-☐ Importar a biblioteca path dentro do .sequelizerc
+✔ Criar pasta chamada database na raiz do projeto @done(22-05-12 01:07)
+✔ Na raiz do projeto criar o arquivo .sequelizerc @done(22-05-12 01:07)
+✔ Importar a biblioteca path dentro do .sequelizerc @done(22-05-12 01:07)
 const path = require("path")
-☐ Criar um objeto dentro do sequelizerc
+✔ Criar um objeto dentro do sequelizerc @done(22-05-12 01:07)
 modules.exports = {
     'config': path.resolve('database','config.js')
 }
@@ -16,8 +16,8 @@ modules.exports = {
 Nesse caso utilizamos o sequelizerc para saber onde está o arquivo de configurações
 que será utilizado para conexão
 
-☐ Criar o arquivo config.js dentro da pasta database
-☐ Dentro do config.js importar as variáveis de ambiente
+✔ Criar o arquivo config.js dentro da pasta database @done(22-05-12 01:07)
+✔ Dentro do config.js importar as variáveis de ambiente @done(22-05-12 01:07)
 Aqui serão guardadas as informaões necessárias para o sequelizar usar nosso
 banco de dados
 
@@ -163,6 +163,41 @@ CRIANDO SEEDERS:
 
 ☐ Crie a pasta seeders com o comando no terminal:
 npx sequelize seed:generate --name seed-usuarios
+
+☐ Adicione a função builkInsert dentro do async up no seeders de usuario
+module.exports = {
+  async up (queryInterface, Sequelize) {
+    
+    let usuarios = [];
+    
+    for(let i=1; i<=20; i++){
+      usuarios.push(
+        {
+          id: i,
+          nome: `Usuário ${i}`,
+          email: `usuario${i}@teste.com`,
+          senha: bcrypt.hashSync('123456', 10),
+          foto: `perfil_${i}.jpg`,
+          createdAt: (new Date()).toJSON().substring(0,19)
+        }
+      )
+    }
+
+    await queryInterface.bulkInsert('usuarios', usuarios, {});
+    
+  },
+
+  async down (queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('usuarios', null, {});
+  }
+};
+
+☐ Instale o bcrypt e o importe dentro do seeders de usuarios
+npm i bcrypt
+
+const bcrypt = require("bcrypt"); ///  DENTRO DO SEEDERS USUARIOS
+
+☐ 
 
 
 
