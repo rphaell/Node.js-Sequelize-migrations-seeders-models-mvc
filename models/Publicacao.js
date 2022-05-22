@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 
       publicacao.associate = (models) => {
           publicacao.belongsTo(models.Usuario, {foreignKey:'usuarios_id', as: 'autor'})
-          publicacao.belongsToMany(model.Usuario,
+          publicacao.belongsToMany(models.Usuario,
              {
                through: "curtidas", // nome da tabela de ligação
                foreignKey: "publicacoes_id", //coluna da tabela auxiliar que tem o id da model atual
