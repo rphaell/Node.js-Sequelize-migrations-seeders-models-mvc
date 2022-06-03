@@ -21,16 +21,20 @@ module.exports = {
           type: Sequelize.DataTypes.INTEGER,
           allowNull: false,
           references: {
-          model:{
-          tableName: "usuarios"
-          },
-          key:"id"
-          },          
+            model:{
+              tableName: "usuarios"
+            },
+            key:"id"
+          }
         },
-        
         createdAt: Sequelize.DataTypes.DATE,
-        updatedAt: Sequelize.DataTypes.DATE,        
+        updatedAt: Sequelize.DataTypes.DATE,
       }
-    )  
-  } 
-}
+    );
+    
+  },
+
+  async down (queryInterface, Sequelize) {
+    await queryInterface.dropTable('publicacoes');
+  }
+};

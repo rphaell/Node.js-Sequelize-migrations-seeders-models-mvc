@@ -1,14 +1,15 @@
-// const {sequelize} = require('../models');
-// RAW QUERIES
-
-
-
 const {Usuario, sequelize} = require('../models');
-const Publicacao = require('../models/Publicacao');
 
-Usuario.findByPk(1, {include:'publicacoes'}).then(
-    data => {
-        console.log(data.toJSON());
-        // sequelize.close()
-    }
+
+let u = Usuario.build({
+    nome: "Sérgio",
+    email: "sergio@gmail.com",
+    senha: "lalala"
+})
+
+u.nAmigos().then(c=>console.log(c));
+
+Usuario.login("usuario1@teste.com", "123456").then(
+    x => console.log(x)
 )
+

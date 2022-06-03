@@ -31,11 +31,13 @@ module.exports = (sequelize, DataTypes) => {
             paranoid: true
         }
     )
-    
-    usuario.associate = (models) => {
-        usuario.hasMany(models.Publicacao, {foreignKey: 'usuarios_id', as:'publicacoes'})
 
+    usuario.associate = (models) =>{
+        usuario.hasMany(
+            models.Publicacao,
+            {foreignKey:"usuarios_id", as:"publicacoes"}
+        );
     }
-    
+
     return usuario;
 }
