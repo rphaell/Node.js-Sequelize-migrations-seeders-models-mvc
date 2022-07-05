@@ -12,7 +12,33 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  
+  <div id="registro">
+    <form>
+      <label>
+        <span>E-mail:</span>
+        <input type="email" name="email" id="email">
+      </label>
+      <label>
+        <span>Senha:</span>
+        <input type="password" name="senha" id="senha">
+      </label>
+      <label>
+        <span>Confirme a senha:</span>
+        <input type="password" name="confirmacao" id="confirmacao">
+      </label>
+      <label class="foto-container">
+        <span>Clique para selecionar uma foto</span>
+        <input type="file" name="foto" id="foto">
+      </label>
+      <div class="controles">
+        <button>Cancelar</button>
+        <button class="primary">Entrar</button>
+      </div>
+      <img id="output">
+    </form>
+  </div>
+
+  <div id="app">
   <header>
     <div class="container">
       <div class="personal-data">
@@ -86,7 +112,8 @@
       
       <div id="feed">
         <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+          Quero que a mágica aconteça!
+          A gente consegue automatizar!
         </article>
 
         <article>
@@ -140,6 +167,9 @@
   <footer>
     <div class="container">&copy; My SóQueNão - Nenhum direito reservado. Use como quiser.</div>
   </footer>
+</div>
   
+  <script src="js/index.js"></script>
+
 </body>
 </html>
